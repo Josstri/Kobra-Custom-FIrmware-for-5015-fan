@@ -796,7 +796,7 @@
  */
 #define DEFAULT_AXIS_STEPS_PER_UNIT \
   {                                 \
-    80, 80, 800, 390                \
+    80, 80, 800, 824.01                \
   }
 
 /**
@@ -825,7 +825,7 @@
  */
 #define DEFAULT_MAX_ACCELERATION \
   {                              \
-    700, 600, 50, 3000           \
+    8000, 8000, 8000, 3000           \
   }
 
 //#define LIMITED_MAX_ACCEL_EDITING     // Limit edit via M201 or LCD to DEFAULT_MAX_ACCELERATION * 2
@@ -844,7 +844,7 @@
  *   M204 R    Retract Acceleration
  *   M204 T    Travel Acceleration
  */
-#define DEFAULT_ACCELERATION 600          // X, Y, Z and E acceleration for printing moves
+#define DEFAULT_ACCELERATION  2000         // X, Y, Z and E acceleration for printing moves
 #define DEFAULT_RETRACT_ACCELERATION 2000 // E acceleration for retracts
 #define DEFAULT_TRAVEL_ACCELERATION 1000  // X, Y, Z acceleration for travel (non printing) moves
 
@@ -858,9 +858,9 @@
  */
 #define CLASSIC_JERK
 #if ENABLED(CLASSIC_JERK)
-#define DEFAULT_XJERK 5
-#define DEFAULT_YJERK 5
-#define DEFAULT_ZJERK 0.3
+#define DEFAULT_XJERK 10
+#define DEFAULT_YJERK 10
+#define DEFAULT_ZJERK 10
 
 //#define TRAVEL_EXTRA_XYJERK 0.0     // Additional jerk allowance for all travel moves
 
@@ -868,7 +868,7 @@
 #if ENABLED(LIMITED_JERK_EDITING)
 #define MAX_JERK_EDIT_VALUES \
   {                          \
-    20, 20, 0.6, 10          \
+    10, 10, 10, 10          \
   } // ...or, set your own edit limits
 #endif
 #endif
@@ -985,7 +985,7 @@
  */
 //#define TOUCH_MI_PROBE
 #if ENABLED(TOUCH_MI_PROBE)
-#define TOUCH_MI_RETRACT_Z 0.5 // Height at which the probe retracts
+#define TOUCH_MI_RETRACT_Z 0.3 // Height at which the probe retracts
 //#define TOUCH_MI_DEPLOY_XPOS (X_MAX_BED + 2)  // For a magnet on the right side of the bed
 //#define TOUCH_MI_MANUAL_DEPLOY                // For manual deploy (LCD menu)
 #endif
@@ -1121,7 +1121,7 @@
  * A total of 2 does fast/slow probes with a weighted average.
  * A total of 3 or more adds more slow probes, taking the average.
  */
-#define MULTIPLE_PROBING 2
+#define MULTIPLE_PROBING 5
 //#define EXTRA_PROBING    1
 
 /**
